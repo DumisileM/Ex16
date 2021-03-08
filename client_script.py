@@ -36,9 +36,16 @@ lilly_employee_profile.request_salary()
 
 # print(lilly_employee_profile.salary)
 
+
+#instantiate the Customer class
 customer=Customer("Jack",46,"Male","Accountant")
 
+#calling our measure satisfaction method and change tier method
 customer.measure_satisfaction()
+
+customer.change_tier()
+
+# print(customer.customer_tier)
 
 
 

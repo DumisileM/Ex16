@@ -43,13 +43,14 @@ class Employee(Person):
 
 class Customer(Employee):
     def __init__(self,name,age,sex,job,customer_tier="standard",satisfaction=0):
-        super().__init__(name,age,sex,job)
+        super().__init__(name , age, sex,job)
         self.customer_tier=customer_tier
         self.satisfaction=satisfaction
 
     def measure_satisfaction(self):
         make_value=input("On a scale of 1-5, how satisfied are you with our service? ")
         value=int(make_value)
+        self.satisfaction=value
         if value == 5:
             return "Customer is satisfied with service"
 
@@ -58,4 +59,23 @@ class Customer(Employee):
 
         else:
             return "Customer is not satisfied"
+
+
+
+    def change_tier(self):
+        tier_upgrade_list = ["bronze","silver","gold"]
+        upgrade_tier = input("Would you like to upgrade your tier, Y/N ?:")
+
+        if  upgrade_tier == "Y":
+
+            decision=input("Please select the tier you would like: {}".format(tier_upgrade_list))
+            self.customer_tier =decision
+            print("Thank you for upgrading your new tier is {}".format(self.customer_tier))
+
+        else:
+            print("Thank you for your time.")
+
+
+
+
 
